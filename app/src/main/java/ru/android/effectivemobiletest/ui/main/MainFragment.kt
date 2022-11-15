@@ -42,8 +42,6 @@ class MainFragment : Fragment(),RecyclerViewClickListener {
     }
 
     private val categoryAdapter = CategoryAdapter(this)
-    private val hotSalesAdapter = CategoryAdapter(this)
-    private val bestSellerAdapter = CategoryAdapter(this)
 
     private val adapterDelegate = ListDelegationAdapter<List<ListItem>>(
         HomeDelegates.hotSalesHorizontalLayout(this),
@@ -62,7 +60,6 @@ class MainFragment : Fragment(),RecyclerViewClickListener {
     private fun observeList() {
         vm.list.observe(viewLifecycleOwner, Observer { list ->
             //vm.loadHotSalesAdapter(hotSalesAdapter,list)
-            Log.e("ErrorApi", " 1 - mian")
             adapterDelegate.apply {
                 items = listOf(
                     HotSalesHorizontalLayoutItem(list.hotList),
@@ -70,7 +67,11 @@ class MainFragment : Fragment(),RecyclerViewClickListener {
                 )
                 notifyDataSetChanged()
             }
+
+            binding.progressBar.visibility = View.GONE
         })
+
+
         vm.error.observe(viewLifecycleOwner, Observer { error ->
             //todo
         })
@@ -107,32 +108,12 @@ class MainFragment : Fragment(),RecyclerViewClickListener {
        vm.loadCategoryAdapter(categoryAdapter)
     }
 
-    //private fun initPagerView2HotSales() {
-    //    binding.PagerHotSales.apply {
-    //        //addItemDecoration(SpaceItemDecoration(27))
-    //        adapter = hotSalesAdapter
-    //    }
-    //}
-//
-    //private fun initRecyclerViewBestSeller() {
-    //    binding.BestSellerRecyclerVIew.apply {
-    //        layoutManager = GridLayoutManager(requireContext(),2)
-    //        adapter = bestSellerAdapter
-    //        (itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-    //    }
-//
-    //    vm.loadCategoryAdapter(categoryAdapter)
-    //}
-
     private fun initButtons() {
 
         buttonChangeRegion()
         buttonFilter()
         buttonSearchFilter()
         buttonMoreContentCategory()
-//        buttonMoreContentHotSales()
-//        buttonMoreContentBestSeller()
-
     }
 
     private fun buttonChangeRegion(){

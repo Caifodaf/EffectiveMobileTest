@@ -158,8 +158,6 @@
                     android:letterSpacing="-0.03"
                     android:fontFamily="@font/mark_pro_normal"
                     />
-
-
             </LinearLayout>
 
             <ImageView
@@ -175,6 +173,16 @@
                 android:background="@drawable/corners_circle"
                 android:backgroundTint="@color/orange_original"
                 />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/LLSearchBlock"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="150dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/HomeDelegateRecyclerView"

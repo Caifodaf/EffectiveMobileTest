@@ -199,7 +199,7 @@ class ProductPageFragment : Fragment() {
 
     private fun buttonBack(){
         binding.ImageBtnBack.setOnClickListener{
-            childFragmentManager.popBackStack();
+            parentFragmentManager.popBackStack();
         }
     }
 
