@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/startPageFragment"
+        android:name="ru.android.effectivemobiletest.ui.startpage.StartPageFragment"
+        android:label="start_page_fragment"
+        tools:layout="@layout/start_page_fragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="ru.android.effectivemobiletest.ui.cart.CartFragment"
+        android:label="cart_fragment"
+        tools:layout="@layout/cart_fragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.android.effectivemobiletest.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_productPageFragment"
+            app:destination="@id/productPageFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productPageFragment"
+        android:name="ru.android.effectivemobiletest.ui.product.ProductPageFragment"
+        android:label="product_page_fragment"
+        tools:layout="@layout/product_page_fragment" >
+        <action
+            android:id="@+id/action_productPageFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.android.effectivemobiletest.ui.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+</navigation>

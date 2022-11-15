@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/MainBlockBestProductItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dp"
+    android:layout_margin="6dp"
+    android:background="@drawable/corners_all_10"
+    android:backgroundTint="@color/white">
+
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="wrap_content"
+        android:layout_height="177dp"
+        android:background="@drawable/corners_all_10"
+        android:src="@drawable/product"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp"
+        />
+
+    <ImageView
+        android:id="@+id/ImageBtnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="7dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_favorite"
+        android:background="@drawable/corners_circle"
+        android:backgroundTint="@color/white"
+        android:elevation="20dp"
+        />
+
+    <TextView
+        android:id="@+id/TVPriceDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/Image"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="21dp"
+        android:maxLines="1"
+        android:text="$1,047"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeMaxTextSize="16sp"
+        android:autoSizeStepGranularity="1sp"
+        android:textSize="16sp"
+        android:textColor="@color/dark_blue_original"
+        android:fontFamily="@font/mark_pro_bold"
+        android:letterSpacing="-0.02"
+        tools:targetApi="o"
+        />
+
+    <TextView
+        android:id="@+id/TVPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/TVPriceDiscount"
+        app:layout_constraintStart_toEndOf="@id/TVPriceDiscount"
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="7dp"
+        android:maxLines="1"
+        android:text="$1,500"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeMaxTextSize="12sp"
+        android:autoSizeStepGranularity="1sp"
+        android:textSize="10sp"
+        android:textColor="#CCCCCC"
+        android:fontFamily="@font/mark_pro_bold"
+        android:letterSpacing="-0.02"
+        tools:targetApi="o"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/TVNameProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="15dp"
+        android:autoSizeMaxTextSize="12sp"
+        android:autoSizeMinTextSize="8sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/mark_pro_normal"
+        android:letterSpacing="-0.03"
+        android:maxLines="1"
+        android:text="Samsung Galaxy s20 Ultra"
+        android:textColor="@color/dark_blue_original"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TVPriceDiscount"
+        tools:targetApi="o"
+        tools:ignore="SmallSp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

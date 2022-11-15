@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainBlockHotItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/corners_all_10"
+    android:backgroundTint="#101010"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="21dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="11dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/LLNewBlock"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/corners_circle"
+        android:backgroundTint="@color/orange_original"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:backgroundTint="#FF6E4E"
+            android:text="New"
+            android:maxLines="1"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="6sp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeStepGranularity="1sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sfprodisplay_bold"
+            android:letterSpacing="-0.03"
+            tools:targetApi="o" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GuidelineCenterHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.333" />
+
+    <TextView
+        android:id="@+id/TvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:autoSizeMaxTextSize="25sp"
+        android:autoSizeMinTextSize="15sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/sfprodisplay_bold"
+        android:gravity="top|start"
+        android:letterSpacing="-0.01"
+        android:maxLines="2"
+        android:text="Iphone 12Iphone 12Iphone 12Iphone 12Iphone 12"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/GuidelineCenterVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/GuidelineCenterHorizontal"
+        tools:targetApi="o" />
+
+
+    <TextView
+        android:id="@+id/TvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:autoSizeMaxTextSize="11sp"
+        android:autoSizeMinTextSize="6sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/sfprodisplay_regular"
+        android:letterSpacing="-0.03"
+        android:maxLines="2"
+        android:text="desc"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@id/GuidelineCenterVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TvTitle"
+        tools:targetApi="o" />
+
+
+    <TextView
+        android:id="@+id/TvBtnBuy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="26dp"
+        android:autoSizeMaxTextSize="11sp"
+        android:autoSizeMinTextSize="6sp"
+        android:autoSizeStepGranularity="1sp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/corners_all_5"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/sfprodisplay_bold"
+        android:gravity="center"
+        android:letterSpacing="-0.03"
+        android:maxLines="1"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Buy now!"
+        android:textColor="#010035"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/GuidelineCenterVertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TvTitle"
+        tools:targetApi="o" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GuidelineCenterVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="139dp" />
+
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/GuidelineCenterVertical"
+        android:layout_marginStart="-42dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="-29dp"
+        android:layout_marginEnd="-104dp"
+        android:elevation="-1dp"
+        android:scaleType="fitXY"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

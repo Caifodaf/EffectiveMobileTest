@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment"
+    android:background="@color/background_default">
+
+
+<FrameLayout
+    android:id="@+id/NSVMaimBlock"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/LLGeoPositionSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="22dp"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_geo"
+                    android:layout_marginEnd="5dp"
+                    />
+                <TextView
+                    android:id="@+id/TVLocationName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="Zihuatanejo, Gro"
+                    android:fontFamily="@font/mark_pro_medium"
+                    android:letterSpacing="-0.02"
+                    android:maxLines="1"
+                    android:textColor="@color/dark_blue_original"
+                    android:textSize="15sp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/ic_arrow_down"
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ImageBtnFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_filter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:id="@+id/TVTitleCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/LLGeoPositionSelect"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="17dp"
+                android:text="Select Category"
+                android:fontFamily="@font/mark_pro_bold"
+                android:letterSpacing="-0.01"
+                android:maxLines="1"
+                android:textColor="@color/dark_blue_original"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:id="@+id/TVBtnViewAllCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="33dp"
+                android:fontFamily="@font/mark_pro_normal"
+                android:gravity="center"
+                android:letterSpacing="-0.02"
+                android:maxLines="1"
+                android:text="view all"
+                android:textColor="@color/orange_original"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/TVTitleCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/TVTitleCategory" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/CategoryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/TVTitleCategory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="6"
+                tools:listitem="@layout/category_item"
+                android:orientation="horizontal"
+                />
+
+            <LinearLayout
+                android:id="@+id/LLSearchBlock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="11dp"
+                android:background="@drawable/corners_all_50"
+                android:backgroundTint="@color/white"
+                android:elevation="20dp"
+                android:orientation="horizontal"
+                android:gravity="center|start"
+                app:layout_constraintEnd_toStartOf="@id/ImageBtnSortSearch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/CategoryRecyclerView">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:src="@drawable/ic_search"/>
+
+                <EditText
+                    android:id="@+id/EditSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@android:color/transparent"
+                    android:inputType="text"
+                    android:maxEms="100"
+                    android:maxLines="1"
+                    android:hint="Search"
+                    android:textColorHint="#80010035"
+                    android:textColor="@color/dark_blue_original"
+                    android:textSize="12sp"
+                    android:letterSpacing="-0.03"
+                    android:fontFamily="@font/mark_pro_normal"
+                    />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ImageBtnSortSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/LLSearchBlock"
+                app:layout_constraintBottom_toBottomOf="@id/LLSearchBlock"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="37dp"
+                android:padding="9.61dp"
+                android:src="@drawable/ic_sort"
+                android:background="@drawable/corners_circle"
+                android:backgroundTint="@color/orange_original"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/HomeDelegateRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:layout_marginBottom="80dp"
+                app:layout_constraintTop_toBottomOf="@+id/LLSearchBlock"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/hot_sales_horizontal_layout" />
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/TVTitleHotSales"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/LLSearchBlock"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:layout_marginStart="17dp"-->
+<!--                android:text="Hot sales"-->
+<!--                android:fontFamily="@font/mark_pro_bold"-->
+<!--                android:letterSpacing="-0.01"-->
+<!--                android:maxLines="1"-->
+<!--                android:textColor="@color/dark_blue_original"-->
+<!--                android:textSize="25sp"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/TVBtnSeeMoreHotSales"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="33dp"-->
+<!--                android:fontFamily="@font/mark_pro_normal"-->
+<!--                android:gravity="center"-->
+<!--                android:letterSpacing="-0.02"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="see more"-->
+<!--                android:textColor="@color/orange_original"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/TVTitleHotSales"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/TVTitleHotSales" />-->
+
+<!--            <androidx.viewpager2.widget.ViewPager2-->
+<!--                android:id="@+id/PagerHotSales"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/TVTitleHotSales"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/TVTitleBestSeller"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/PagerHotSales"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                android:layout_marginStart="17dp"-->
+<!--                android:text="Best Seller"-->
+<!--                android:fontFamily="@font/mark_pro_bold"-->
+<!--                android:letterSpacing="-0.01"-->
+<!--                android:maxLines="1"-->
+<!--                android:textColor="@color/dark_blue_original"-->
+<!--                android:textSize="25sp"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/TVBtnSeeMoreBestSeller"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="33dp"-->
+<!--                android:fontFamily="@font/mark_pro_normal"-->
+<!--                android:gravity="center"-->
+<!--                android:letterSpacing="-0.02"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="see more"-->
+<!--                android:textColor="@color/orange_original"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/TVTitleBestSeller"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/TVTitleBestSeller" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/BestSellerRecyclerVIew"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/TVTitleBestSeller"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:layout_marginTop="21dp"-->
+<!--                tools:listitem="@layout/best_seller_product_item"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                tools:itemCount="6"-->
+<!--                />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corners_top_30"
+        android:backgroundTint="@color/dark_blue_original"
+        android:layout_gravity="bottom"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/GuidelineCenterVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="164dp" />
+
+        <ImageView
+            android:id="@+id/ImageEllipse"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_ellipse"
+            app:layout_constraintTop_toTopOf="@id/TVTitleBottom"
+            app:layout_constraintBottom_toBottomOf="@id/TVTitleBottom"
+            app:layout_constraintEnd_toStartOf="@id/TVTitleBottom"
+            android:layout_marginEnd="7dp"
+            />
+        <TextView
+            android:id="@+id/TVTitleBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/GuidelineCenterVertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="23.5dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="27dp"
+            android:fontFamily="@font/mark_pro_bold"
+            android:gravity="center"
+            android:letterSpacing="-0.02"
+            android:maxLines="1"
+            android:text="Explorer"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            />
+
+        <LinearLayout
+            android:id="@+id/LLBottomButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_marginEnd="43.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/GuidelineCenterVertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ImageBottomBtnCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cart_bottom"
+                android:padding="15dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@+id/ImageBottomBtnFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_bottom"
+                android:padding="15dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@+id/ImageBottomBtnProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile_bottom"
+                android:padding="15dp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
+
+
+
+</FrameLayout>
